@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://res/jpg/cementfactorylow.jpg" type="Texture" id=2]
+[ext_resource path="res://astronaut.gd" type="Script" id=3]
+[ext_resource path="res://res/png/dude.png" type="Texture" id=4]
+
+[sub_resource type="Animation" id=2]
+resource_name = "New Anim"
+
+[sub_resource type="Animation" id=1]
+resource_name = "movement"
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="background" type="TextureRect" parent="."]
+margin_left = 3.3241
+margin_right = 1283.32
+margin_bottom = 768.0
+texture = ExtResource( 2 )
+
+[node name="astronaut" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 3 )
+
+[node name="TextureRect" type="TextureRect" parent="astronaut"]
+margin_left = 360.11
+margin_top = 206.094
+margin_right = 415.11
+margin_bottom = 262.094
+texture = ExtResource( 4 )
+
+[node name="astrodude" type="AnimationPlayer" parent="."]
+"anims/New Anim" = SubResource( 2 )
+anims/movement = SubResource( 1 )
+
+[node name="dude" type="Sprite" parent="astrodude"]
+position = Vector2( 387.811, 230.471 )
+texture = ExtResource( 4 )
