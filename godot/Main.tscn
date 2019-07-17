@@ -29,11 +29,9 @@ visible = false
 position = Vector2( 361, 226 )
 
 [node name="Meteor01" parent="." instance=ExtResource( 4 )]
-visible = false
 position = Vector2( 441, 264 )
 
 [node name="Meteor02" parent="." instance=ExtResource( 5 )]
-visible = false
 position = Vector2( 407, 294 )
 
 [node name="Meteor03" parent="." instance=ExtResource( 6 )]
