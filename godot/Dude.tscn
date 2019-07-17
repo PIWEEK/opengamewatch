@@ -38,7 +38,7 @@ position = Vector2( 30.2353, 39.5883 )
 texture = ExtResource( 2 )
 
 [node name="1_2" type="Sprite" parent="."]
-position = Vector2( 124.721, 65.441 )
+position = Vector2( 125.971, 65.441 )
 texture = ExtResource( 3 )
 
 [node name="1_3" type="Sprite" parent="."]
@@ -46,11 +46,11 @@ position = Vector2( 250.426, 50.6177 )
 texture = ExtResource( 4 )
 
 [node name="1_4" type="Sprite" parent="."]
-position = Vector2( 369.853, 56.1176 )
+position = Vector2( 372.353, 56.1176 )
 texture = ExtResource( 5 )
 
 [node name="1_5" type="Sprite" parent="."]
-position = Vector2( 492.588, 49.2939 )
+position = Vector2( 498.838, 49.2939 )
 texture = ExtResource( 6 )
 
 [node name="1_6" type="Sprite" parent="."]
@@ -62,31 +62,31 @@ position = Vector2( 707.647, 38.8823 )
 texture = ExtResource( 8 )
 
 [node name="2_2" type="Sprite" parent="."]
-position = Vector2( 141.28, 132.927 )
+position = Vector2( 95.0298, 134.177 )
 texture = ExtResource( 9 )
 
 [node name="2_3" type="Sprite" parent="."]
-position = Vector2( 262.176, 118.721 )
+position = Vector2( 239.676, 123.721 )
 texture = ExtResource( 10 )
 
 [node name="2_4" type="Sprite" parent="."]
-position = Vector2( 386.353, 123.368 )
+position = Vector2( 373.853, 124.618 )
 texture = ExtResource( 11 )
 
 [node name="2_5" type="Sprite" parent="."]
-position = Vector2( 511.838, 121.725 )
+position = Vector2( 504.338, 121.725 )
 texture = ExtResource( 12 )
 
 [node name="2_6" type="Sprite" parent="."]
-position = Vector2( 642.956, 129.839 )
+position = Vector2( 624.206, 137.339 )
 texture = ExtResource( 13 )
 
 [node name="3_2" type="Sprite" parent="."]
-position = Vector2( 121.397, 198.618 )
+position = Vector2( 133.897, 189.868 )
 texture = ExtResource( 14 )
 
 [node name="3_3" type="Sprite" parent="."]
-position = Vector2( 261.176, 191.044 )
+position = Vector2( 269.926, 192.294 )
 texture = ExtResource( 15 )
 
 [node name="3_4" type="Sprite" parent="."]
@@ -94,15 +94,15 @@ position = Vector2( 395.353, 193.839 )
 texture = ExtResource( 16 )
 
 [node name="3_5" type="Sprite" parent="."]
-position = Vector2( 509.265, 192.589 )
+position = Vector2( 511.765, 193.839 )
 texture = ExtResource( 17 )
 
 [node name="3_6" type="Sprite" parent="."]
-position = Vector2( 638.148, 199.133 )
+position = Vector2( 636.898, 195.383 )
 texture = ExtResource( 18 )
 
 [node name="4_6" type="Sprite" parent="."]
-position = Vector2( 607.206, 265.78 )
+position = Vector2( 602.206, 262.03 )
 texture = ExtResource( 19 )
 
 [node name="4_5" type="Sprite" parent="."]
@@ -114,11 +114,11 @@ position = Vector2( 369.853, 254.971 )
 texture = ExtResource( 21 )
 
 [node name="4_3" type="Sprite" parent="."]
-position = Vector2( 251.177, 262.25 )
+position = Vector2( 251.177, 256 )
 texture = ExtResource( 22 )
 
 [node name="4_2" type="Sprite" parent="."]
-position = Vector2( 145.956, 261.294 )
+position = Vector2( 130.956, 257.544 )
 texture = ExtResource( 23 )
 
 [node name="5_2" type="Sprite" parent="."]

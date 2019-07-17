@@ -28,33 +28,31 @@ texture = ExtResource( 2 )
 position = Vector2( 346, 206 )
 
 [node name="Meteor01" parent="." instance=ExtResource( 4 )]
-position = Vector2( 441, 264 )
+position = Vector2( 330, 236 )
 
 [node name="Meteor02" parent="." instance=ExtResource( 5 )]
-position = Vector2( 407, 294 )
+position = Vector2( 336, 285 )
 
 [node name="Meteor03" parent="." instance=ExtResource( 6 )]
-position = Vector2( 347, 348 )
+position = Vector2( 324, 340 )
 
 [node name="Meteor04" parent="." instance=ExtResource( 7 )]
-position = Vector2( 381, 407 )
+position = Vector2( 367, 401 )
 
 [node name="Meteor05" parent="." instance=ExtResource( 8 )]
-position = Vector2( 426, 452 )
+position = Vector2( 340, 435 )
 
 [node name="Flag" parent="." instance=ExtResource( 9 )]
-visible = false
-position = Vector2( 459, 483 )
+position = Vector2( 425, 460 )
 
 [node name="Houston" parent="." instance=ExtResource( 10 )]
-position = Vector2( 872, 352 )
+position = Vector2( 872, 345 )
 
 [node name="Base" parent="." instance=ExtResource( 11 )]
 position = Vector2( 470, 494 )
 
 [node name="Dead" parent="." instance=ExtResource( 12 )]
-visible = false
-position = Vector2( 362, 456 )
+position = Vector2( 352, 463 )
 
 [node name="Columbia" parent="." instance=ExtResource( 13 )]
 position = Vector2( 350, 185 )
