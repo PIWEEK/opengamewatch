@@ -6,52 +6,42 @@
 [ext_resource path="res://res/sprite/columbia_4.png" type="Texture" id=4]
 
 [node name="Columbia" type="Node2D"]
-editor/display_folded = true
 
 [node name="columbia1" type="Sprite" parent="."]
-position = Vector2( 17.1266, 12.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 35.1266, 23.0288 )
 texture = ExtResource( 1 )
 
 [node name="columbia2" type="Sprite" parent="."]
-position = Vector2( 92.1266, 15.8249 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 114.127, 171.825 )
 texture = ExtResource( 2 )
 
 [node name="columbia3" type="Sprite" parent="."]
-position = Vector2( 166.127, 11.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 170.127, 23.0288 )
 texture = ExtResource( 1 )
 flip_h = true
 
 [node name="columbia4" type="Sprite" parent="."]
-position = Vector2( 234.127, 10.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 213.127, 180.029 )
 texture = ExtResource( 3 )
 
 [node name="columbia5" type="Sprite" parent="."]
-position = Vector2( 284.534, 11.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 332.534, 153.029 )
 texture = ExtResource( 4 )
 
 [node name="columbia6" type="Sprite" parent="."]
-position = Vector2( 335.127, 10.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 357.127, 20.0288 )
 texture = ExtResource( 3 )
 flip_h = true
 
 [node name="columbia7" type="Sprite" parent="."]
-position = Vector2( 404.127, 11.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 400.127, 22.0288 )
 texture = ExtResource( 1 )
 
 [node name="columbia8" type="Sprite" parent="."]
-position = Vector2( 459.127, 15.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 446.127, 119.029 )
 texture = ExtResource( 2 )
 
 [node name="columbia9" type="Sprite" parent="."]
-position = Vector2( 518.33, 11.0288 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 518.33, 22.0288 )
 texture = ExtResource( 1 )
 flip_h = true
