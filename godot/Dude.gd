@@ -73,19 +73,21 @@ func _ready():
 	
 	hide_dude(startpos)
 	startpos = go_right(startpos, 0)
-	print(startpos)
+	
 	draw_dude(startpos)
 
 
 func dead():
 	var dead = load("res://Dead.tscn").instance()
+	dead.position.x = 352
+	dead.position.y = 463
 	var deadsprite = dead.get_node("deaddude")
-	deadsprite.position.x = 1000
-	deadsprite.position.y = 500
 	deadsprite.visible = true
 	get_node("dead").play()
 	deaddude = true
-	
+
+func resuscitate():
+	deaddude = false
 
 func go_right(startpos, delta):
 	var startdude = coord_sprites[startpos]
@@ -168,31 +170,26 @@ func _process(delta):
 		if Input.is_action_just_released("ui_right"):
 			hide_dude(startpos)
 			startpos = go_right(startpos, delta)
-			print(startpos)
 			draw_dude(startpos)
 			
 		elif Input.is_action_just_released("ui_left"):
 			hide_dude(startpos)
 			startpos = go_left(startpos, delta)
-			print(startpos)
 			draw_dude(startpos)	
 
 		elif Input.is_action_just_released("ui_accept"):
 			hide_dude(startpos)
 			startpos = jump(startpos)
-			print(startpos)
 			draw_dude(startpos)
 			currentdeltaforgravity = 0
 		elif Input.is_action_just_released("ui_down"):
 			hide_dude(startpos)
 			startpos = go_down(startpos)
-			print(startpos)
 			draw_dude(startpos)
 			currentdeltaforgravity = 0
 		if currentdeltaforgravity >= maxdeltaforgravity:
 			hide_dude(startpos)
 			startpos = go_down(startpos)
-			print(startpos)
 			draw_dude(startpos)
 			currentdeltaforgravity = 0
 	else:

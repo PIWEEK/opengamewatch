@@ -5,6 +5,7 @@
 [node name="Dead" type="Node2D"]
 scale = Vector2( 0.8, 0.8 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="deaddude" type="Sprite" parent="."]
+visible = false
 position = Vector2( 49.7637, 29.7874 )
 texture = ExtResource( 1 )
