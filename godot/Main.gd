@@ -11,15 +11,14 @@ var meteor2
 var meteor3
 var meteor4
 var meteor5
-
-var ml1list
-
-var flag
+var t
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	ml1list = []
+	meteor1 = get_node("Meteor01")
+	meteor2 = get_node("Meteor02")
+	
 
 
 #	flagizq = get_node("flags").get_node("flagL")
@@ -29,13 +28,13 @@ func _ready():
 #	pass
 
 func _process(delta):
-	process_player_input(delta)
+	t = Timer.new()
+	t.set_wait_time(5.5)
+	add_child(t)
+	t.start()
+	yield(t, "timeout")
+	meteor1.visible = true
+    
 	#process_meteor1(delta)
 	
 
-
-func create_meteor1():
-	pass
-
-func process_player_input(delta):
-	pass
