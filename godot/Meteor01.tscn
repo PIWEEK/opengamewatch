@@ -15,45 +15,33 @@ var ml1list
 "
 
 [node name="Meteor01" type="Node2D"]
+scale = Vector2( 0.75, 0.75 )
 script = SubResource( 1 )
 
 [node name="m1_1" type="Sprite" parent="."]
-visible = false
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 28.1457, 62 )
 texture = ExtResource( 1 )
 
 [node name="m1_2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 54.717, -4 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 106.812, 36.6667 )
 texture = ExtResource( 1 )
 
 [node name="m1_3" type="Sprite" parent="."]
-visible = false
-position = Vector2( 148, -4 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 233.479, 22 )
 texture = ExtResource( 1 )
 
 [node name="m1_4" type="Sprite" parent="."]
-visible = false
-position = Vector2( 238, -1 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 358.762, 19.9524 )
 texture = ExtResource( 1 )
 
 [node name="m1_5" type="Sprite" parent="."]
-visible = false
-position = Vector2( 330, 2 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 493.429, 25.619 )
 texture = ExtResource( 1 )
 
 [node name="m1_6" type="Sprite" parent="."]
-visible = false
-position = Vector2( 426, 3 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 634.762, 38.6191 )
 texture = ExtResource( 1 )
 
 [node name="m1_7" type="Sprite" parent="."]
-visible = false
-position = Vector2( 516, 4 )
-scale = Vector2( 0.5, 0.5 )
+position = Vector2( 763.429, 50.2857 )
 texture = ExtResource( 1 )
