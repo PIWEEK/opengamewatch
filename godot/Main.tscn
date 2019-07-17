@@ -25,8 +25,7 @@ margin_bottom = 768.0
 texture = ExtResource( 2 )
 
 [node name="Dude" parent="." instance=ExtResource( 3 )]
-visible = false
-position = Vector2( 361, 226 )
+position = Vector2( 346, 206 )
 
 [node name="Meteor01" parent="." instance=ExtResource( 4 )]
 position = Vector2( 441, 264 )
@@ -48,19 +47,17 @@ visible = false
 position = Vector2( 459, 483 )
 
 [node name="Houston" parent="." instance=ExtResource( 10 )]
-visible = false
-position = Vector2( 870, 286 )
+position = Vector2( 861, 268 )
 
 [node name="Base" parent="." instance=ExtResource( 11 )]
-visible = false
-position = Vector2( 469, 491 )
+position = Vector2( 470, 494 )
 
 [node name="Dead" parent="." instance=ExtResource( 12 )]
 visible = false
 position = Vector2( 362, 456 )
 
 [node name="Columbia" parent="." instance=ExtResource( 13 )]
-position = Vector2( 352, 185 )
+position = Vector2( 350, 185 )
 
 [node name="Art" type="Sprite" parent="."]
 position = Vector2( 643.148, 371.122 )

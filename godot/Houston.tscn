@@ -9,40 +9,33 @@
 [ext_resource path="res://res/sprite/radio4.png" type="Texture" id=7]
 
 [node name="Houston" type="Node2D"]
-position = Vector2( 10, 10 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 1, 1 )
+scale = Vector2( 0.8, 0.8 )
 
 [node name="antenna" type="Sprite" parent="."]
-position = Vector2( 39.4487, 46.6017 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 71.9487, 87.8517 )
 texture = ExtResource( 1 )
 
 [node name="leverup" type="Sprite" parent="."]
-position = Vector2( 5.91771, 47.6573 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 29.6677, 93.9073 )
 texture = ExtResource( 2 )
 
 [node name="leverup2" type="Sprite" parent="."]
-position = Vector2( 1.91771, 64.3716 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 23.1677, 116.872 )
 texture = ExtResource( 3 )
 
 [node name="radio1" type="Sprite" parent="."]
-position = Vector2( 38.9177, 16.0859 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 71.4177, 41.0859 )
 texture = ExtResource( 4 )
 
 [node name="radio2" type="Sprite" parent="."]
-position = Vector2( 38.9177, 8.65735 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 71.4177, 28.6573 )
 texture = ExtResource( 5 )
 
 [node name="radio3" type="Sprite" parent="."]
-position = Vector2( 38.9177, -1.19981 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 71.4177, 17.5502 )
 texture = ExtResource( 6 )
 
 [node name="radio4" type="Sprite" parent="."]
-position = Vector2( 38.9177, -8.62839 )
-scale = Vector2( 0.7, 0.7 )
+position = Vector2( 71.4177, 6.37161 )
 texture = ExtResource( 7 )
