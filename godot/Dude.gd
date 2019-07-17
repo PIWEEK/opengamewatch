@@ -8,6 +8,11 @@ var pos = [0,0]
 var coord_sprites
 var startpos = [1,1]
 
+var houston = false
+var moonbaseavail = false
+var moonbase = 0
+
+
 var deaddude = false
 
 func move(row,col,direction):
@@ -60,12 +65,24 @@ func _ready():
 	[4,2]: d4_2, [4,3]: d4_3, [4,4]: d4_4, [4,5]: d4_5, [4,6]: d4_6,
 	[5,2]: d5_2, [5,3]: d5_3, [5,4]: d5_4, [5,5]: d5_5, [5,6]: d5_6,}
 	
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(1) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
+	t.start()			# Start it
+	yield(t, "timeout")		# Finally, make the script stop with the yield
+	
+	hide_dude(startpos)
+	startpos = go_right(startpos, 0)
+	print(startpos)
+	draw_dude(startpos)
+
 
 func dead():
 	var dead = load("res://Dead.tscn").instance()
-	
-	dead.position.x = 42
-	dead.position.y = 26
+	var deadsprite = dead.get_node("deaddude")
+	deadsprite.position.x = 1000
+	deadsprite.position.y = 500
+	deadsprite.visible = true
 	get_node("dead").play()
 	deaddude = true
 	
@@ -179,7 +196,7 @@ func _process(delta):
 			draw_dude(startpos)
 			currentdeltaforgravity = 0
 	else:
-		print("DEAD")
+		pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
