@@ -23,24 +23,19 @@ func _ready():
 	meteoranim(meteor2, 1, 0.1, false)
 
 
-#	flagizq = get_node("flags").get_node("flagL")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
 func _process(delta):
 	pass
 
 
-#	meteoranim(meteor2, 3)
-
-    
-	#process_meteor1(delta)
-	
-
 func meteoranim(meteor, delay, offset, right):
+
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(delay+offset) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
+
+	var tend = Timer.new() 		# Create a new Timer node
+	tend.set_wait_time(delay*3) 		# Set the wait time
+	add_child(tend)			# Add it to the node tree as the direct child
 
 	var m_children = meteor.get_children()
 	if not right:
@@ -49,17 +44,8 @@ func meteoranim(meteor, delay, offset, right):
 	while true:
 		for child in m_children:
 			child.visible = true
-			var t = Timer.new() 		# Create a new Timer node
-		
-			t.set_wait_time(delay+offset) 		# Set the wait time
-			add_child(t)			# Add it to the node tree as the direct child
 			t.start()			# Start it
 			yield(t, "timeout")		# Finally, make the script stop with the yield
 			child.visible = false
-		var t = Timer.new() 		# Create a new Timer node
-		
-		t.set_wait_time(delay*3) 		# Set the wait time
-		add_child(t)			# Add it to the node tree as the direct child
-		t.start()			# Start it
-		yield(t, "timeout")		# Finally, make the script stop with the yield
-
+		tend.start()			# Start it
+		yield(tend, "timeout")		# Finally, make the script stop with the yield
