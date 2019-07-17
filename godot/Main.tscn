@@ -1,15 +1,29 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://res/jpg/cementfactorylow.jpg" type="Texture" id=2]
-[ext_resource path="res://astronaut.gd" type="Script" id=3]
-[ext_resource path="res://res/png/dude.png" type="Texture" id=4]
-
-[sub_resource type="Animation" id=2]
-resource_name = "New Anim"
-
-[sub_resource type="Animation" id=1]
-resource_name = "movement"
+[ext_resource path="res://Dude.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Meteor01.tscn" type="PackedScene" id=4]
+[ext_resource path="res://res/sprite/meteorito2.png" type="Texture" id=5]
+[ext_resource path="res://res/sprite/meteorito1.png" type="Texture" id=6]
+[ext_resource path="res://res/sprite/flag.png" type="Texture" id=7]
+[ext_resource path="res://res/sprite/antenna.png" type="Texture" id=8]
+[ext_resource path="res://res/sprite/leverup.png" type="Texture" id=9]
+[ext_resource path="res://res/sprite/leverdown.png" type="Texture" id=10]
+[ext_resource path="res://res/sprite/radio1.png" type="Texture" id=11]
+[ext_resource path="res://res/sprite/radio2.png" type="Texture" id=12]
+[ext_resource path="res://res/sprite/radio3.png" type="Texture" id=13]
+[ext_resource path="res://res/sprite/radio4.png" type="Texture" id=14]
+[ext_resource path="res://res/sprite/base1.png" type="Texture" id=15]
+[ext_resource path="res://res/sprite/base2.png" type="Texture" id=16]
+[ext_resource path="res://res/sprite/base3.png" type="Texture" id=17]
+[ext_resource path="res://res/sprite/base4.png" type="Texture" id=18]
+[ext_resource path="res://res/sprite/base5.png" type="Texture" id=19]
+[ext_resource path="res://res/sprite/dead.png" type="Texture" id=20]
+[ext_resource path="res://res/sprite/columbia_1.png" type="Texture" id=21]
+[ext_resource path="res://res/sprite/columbia_2.png" type="Texture" id=22]
+[ext_resource path="res://res/sprite/columbia_3.png" type="Texture" id=23]
+[ext_resource path="res://res/sprite/columbia_4.png" type="Texture" id=24]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -20,21 +34,173 @@ margin_right = 1283.32
 margin_bottom = 768.0
 texture = ExtResource( 2 )
 
-[node name="astronaut" type="Node2D" parent="."]
-visible = false
-script = ExtResource( 3 )
+[node name="Dude" parent="." instance=ExtResource( 3 )]
 
-[node name="TextureRect" type="TextureRect" parent="astronaut"]
-margin_left = 360.11
-margin_top = 206.094
-margin_right = 415.11
-margin_bottom = 262.094
-texture = ExtResource( 4 )
+[node name="Meteor01" parent="." instance=ExtResource( 4 )]
 
-[node name="astrodude" type="AnimationPlayer" parent="."]
-"anims/New Anim" = SubResource( 2 )
-anims/movement = SubResource( 1 )
+[node name="Meteor03" type="Node2D" parent="."]
 
-[node name="dude" type="Sprite" parent="astrodude"]
-position = Vector2( 387.811, 230.471 )
-texture = ExtResource( 4 )
+[node name="Sprite" type="Sprite" parent="Meteor03"]
+position = Vector2( 888, 365 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Meteor05" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="Meteor05"]
+position = Vector2( 886, 457 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="Meteor02" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="Meteor02"]
+position = Vector2( 387, 321 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Meteor04" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="Meteor04"]
+position = Vector2( 388, 412 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="Flag" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="flagL" type="Sprite" parent="Flag"]
+position = Vector2( 468, 492 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="flagR" type="Sprite" parent="Flag"]
+position = Vector2( 867.503, 491.723 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+flip_h = true
+
+[node name="Houston" type="Node2D" parent="."]
+
+[node name="antenna" type="Sprite" parent="Houston"]
+position = Vector2( 904.531, 322.373 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="leverup" type="Sprite" parent="Houston"]
+position = Vector2( 881, 322 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 9 )
+
+[node name="leverup2" type="Sprite" parent="Houston"]
+position = Vector2( 877, 333 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 10 )
+
+[node name="radio1" type="Sprite" parent="Houston"]
+position = Vector2( 904, 299 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="radio2" type="Sprite" parent="Houston"]
+position = Vector2( 904, 293 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 12 )
+
+[node name="radio3" type="Sprite" parent="Houston"]
+position = Vector2( 904, 286 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 13 )
+
+[node name="radio4" type="Sprite" parent="Houston"]
+position = Vector2( 904, 280 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 14 )
+
+[node name="Base" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="base1" type="Sprite" parent="Base"]
+position = Vector2( 495, 511 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 15 )
+
+[node name="base2" type="Sprite" parent="Base"]
+position = Vector2( 579, 511 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 16 )
+
+[node name="base3" type="Sprite" parent="Base"]
+position = Vector2( 667, 511 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+
+[node name="base4" type="Sprite" parent="Base"]
+position = Vector2( 757, 511 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 18 )
+
+[node name="base5" type="Sprite" parent="Base"]
+position = Vector2( 843, 512 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 19 )
+
+[node name="Dead" type="Node2D" parent="."]
+editor/display_folded = true
+
+[node name="Sprite" type="Sprite" parent="Dead"]
+position = Vector2( 399.155, 513.18 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 20 )
+
+[node name="Columbia" type="Node2D" parent="."]
+
+[node name="columbia1" type="Sprite" parent="Columbia"]
+position = Vector2( 389.274, 208.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="columbia2" type="Sprite" parent="Columbia"]
+position = Vector2( 464.274, 210.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 22 )
+
+[node name="columbia3" type="Sprite" parent="Columbia"]
+position = Vector2( 538.274, 206.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+flip_h = true
+
+[node name="columbia4" type="Sprite" parent="Columbia"]
+position = Vector2( 606.274, 205.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+
+[node name="columbia5" type="Sprite" parent="Columbia"]
+position = Vector2( 656.274, 205.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 24 )
+
+[node name="columbia6" type="Sprite" parent="Columbia"]
+position = Vector2( 707.274, 205.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 23 )
+flip_h = true
+
+[node name="columbia7" type="Sprite" parent="Columbia"]
+position = Vector2( 776.274, 205.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+
+[node name="columbia8" type="Sprite" parent="Columbia"]
+position = Vector2( 831.274, 209.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 22 )
+
+[node name="columbia9" type="Sprite" parent="Columbia"]
+position = Vector2( 890.274, 205.533 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 21 )
+flip_h = true
