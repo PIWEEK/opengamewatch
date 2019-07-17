@@ -19,8 +19,14 @@ var t
 func _ready():
 	meteor1 = get_node("Meteor01")
 	meteor2 = get_node("Meteor02")
+	meteor3 = get_node("Meteor03")
+	meteor4 = get_node("Meteor04")
+	meteor5 = get_node("Meteor05")
 	meteoranim(meteor1, 1, 0, true)
 	meteoranim(meteor2, 1, 0.1, false)
+	meteoranim(meteor3, 1, 0.3, true)
+	meteoranim(meteor4, 1, 0.5, false)
+	meteoranim(meteor5, 1, 0.1, true)
 
 
 func _process(delta):
