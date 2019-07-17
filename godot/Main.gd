@@ -20,11 +20,7 @@ var flag
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	ml1list = []
-	add_meteorline1(400,300)
-	add_meteorline1(500,300)
-	add_meteorline1(600,300)
-	add_meteorline1(700,300)
-	add_meteorline1(800,300)
+
 
 #	flagizq = get_node("flags").get_node("flagL")
 
@@ -37,13 +33,6 @@ func _process(delta):
 	#process_meteor1(delta)
 	
 
-func add_meteorline1(x, y):
-	var m = load("res://Meteor01.tscn").instance()
-	var ml1 = m.get_node("Sprite").duplicate()
-	ml1.position.x = x
-	ml1.position.y = y
-	ml1list.append(ml1)
-	add_child(ml1)
 
 func create_meteor1():
 	pass
