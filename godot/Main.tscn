@@ -47,7 +47,7 @@ visible = false
 position = Vector2( 459, 483 )
 
 [node name="Houston" parent="." instance=ExtResource( 10 )]
-position = Vector2( 861, 268 )
+position = Vector2( 872, 352 )
 
 [node name="Base" parent="." instance=ExtResource( 11 )]
 position = Vector2( 470, 494 )
