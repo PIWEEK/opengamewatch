@@ -20,9 +20,15 @@ func _ready():
 #func _process(delta):
 #	pass
 
+#func add_meteorline1(x, y):
+#	var ml1 = get_node("Sprite").duplicate()
+#	ml1.position.x = x
+#	ml1.position.y = y
+#	ml1list.append(ml1)
+#	add_child(ml1)
 
 func add_meteorline1(x, y):
-	var ml1 = get_node("Sprite").duplicate()
+	var ml1 = load("res://Meteor01.tscn").instance()
 	ml1.position.x = x
 	ml1.position.y = y
 	ml1list.append(ml1)
