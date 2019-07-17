@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/astronautmove.wav-e326b46135fe4a60ce09020b9b23ef4c.sample"
+
+[deps]
+
+source_file="res://res/snd/astronautmove.wav"
+dest_files=[ "res://.import/astronautmove.wav-e326b46135fe4a60ce09020b9b23ef4c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
