@@ -1,13 +1,13 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://res/jpg/cementfactorylow.jpg" type="Texture" id=2]
 [ext_resource path="res://Dude.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Meteor01.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Meteor02.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Meteor05.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Meteor03.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Meteor04.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Meteor03.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Meteor04.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Meteor05.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Flag.tscn" type="PackedScene" id=9]
 [ext_resource path="res://res/sprite/antenna.png" type="Texture" id=10]
 [ext_resource path="res://res/sprite/leverup.png" type="Texture" id=11]
@@ -26,6 +26,7 @@
 [ext_resource path="res://res/sprite/columbia_2.png" type="Texture" id=24]
 [ext_resource path="res://res/sprite/columbia_3.png" type="Texture" id=25]
 [ext_resource path="res://res/sprite/columbia_4.png" type="Texture" id=26]
+[ext_resource path="res://res/png/background.png" type="Texture" id=27]
 
 [node name="Main" type="Node2D"]
 script = ExtResource( 1 )
@@ -45,13 +46,13 @@ script = null
 [node name="Meteor02" parent="." instance=ExtResource( 5 )]
 position = Vector2( 392, 298 )
 
-[node name="Meteor05" parent="." instance=ExtResource( 6 )]
-
-[node name="Meteor03" parent="." instance=ExtResource( 7 )]
+[node name="Meteor03" parent="." instance=ExtResource( 6 )]
 position = Vector2( 367, 371 )
 
-[node name="Meteor04" parent="." instance=ExtResource( 8 )]
-position = Vector2( 65, 19 )
+[node name="Meteor04" parent="." instance=ExtResource( 7 )]
+position = Vector2( 374, 429 )
+
+[node name="Meteor05" parent="." instance=ExtResource( 8 )]
 
 [node name="Flag" parent="." instance=ExtResource( 9 )]
 position = Vector2( 459, 483 )
@@ -178,3 +179,9 @@ position = Vector2( 890.274, 205.533 )
 scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 23 )
 flip_h = true
+
+[node name="Art" type="Sprite" parent="."]
+position = Vector2( 643.148, 371.122 )
+scale = Vector2( 0.785292, 0.785292 )
+z_index = 1
+texture = ExtResource( 27 )
