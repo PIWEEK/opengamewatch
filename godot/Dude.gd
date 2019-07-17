@@ -79,10 +79,11 @@ func _ready():
 
 func dead():
 	var dead = load("res://Dead.tscn").instance()
-	dead.position.x = 352
-	dead.position.y = 463
+	dead.position.x = 10
+	dead.position.y = 326
 	var deadsprite = dead.get_node("deaddude")
 	deadsprite.visible = true
+	add_child(dead)
 	get_node("dead").play()
 	deaddude = true
 

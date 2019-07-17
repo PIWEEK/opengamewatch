@@ -13,6 +13,7 @@ var meteor4
 var meteor5
 var t
 var Columb
+var dude_scene
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,6 +33,10 @@ func _ready():
 	Columb = get_node("Columbia")
 	columbanim(Columb, 1, 0, true)
 	#load_dude()
+	dude_scene = load("res://Dude.tscn").instance()
+	dude_scene.position.x = 350
+	dude_scene.position.y = 210
+	add_child(dude_scene)
 	
 
 func meteor_kills_dude(dudepos, listofmeteorpos):
@@ -40,21 +45,23 @@ func meteor_kills_dude(dudepos, listofmeteorpos):
 			return true
 	return false
 
+	
+
 var currentdudepos = [0,0]
 
 var number_of_misses = 0
 var endgame = false
-
-const DUDE_SCENE = preload("res://Dude.tscn")
-
-func load_dude():
-	var new_dude_scene = DUDE_SCENE.instance()
-	new_dude_scene.position.x = 346
-	new_dude_scene.position.y = 200
-    #Must have unique nodepath
-    #Might be done automatically, but just in case
-	new_dude_scene.set_name("Dude")
-	add_child(new_dude_scene)
+#
+#const DUDE_SCENE = preload("res://Dude.tscn")
+#
+#func load_dude():
+#	var new_dude_scene = DUDE_SCENE.instance()
+#	new_dude_scene.position.x = 346
+#	new_dude_scene.position.y = 200
+#    #Must have unique nodepath
+#    #Might be done automatically, but just in case
+#	new_dude_scene.set_name("Dude")
+#	add_child(new_dude_scene)
 
 func _process(delta):
 	if not endgame:
@@ -65,6 +72,7 @@ func _process(delta):
 			add_child(t)			# Add it to the node tree as the direct child
 			t.start()			# Start it
 			yield(t, "timeout")		# Finally, make the script stop with the yield
+		
 		if number_of_misses > 2:
 			endgame = true
 	
@@ -75,15 +83,21 @@ func _process(delta):
 		var listofmeteorpos = [meteor1pos, meteor2pos]
 		if meteor_kills_dude(currentdudepos, listofmeteorpos):
 			get_node("Dude").dead()
-			print("MUERTE!")
-			print(number_of_misses)
+			
 			var t = Timer.new() 		# Create a new Timer node
 			t.set_wait_time(3) 		# Set the wait time
 			add_child(t)			# Add it to the node tree as the direct child
 			t.start()			# Start it
 			yield(t, "timeout")		# Finally, make the script stop with the yield
-			get_node("Dude").resuscitate()
+
+			#get_node("Dude").resuscitate()
+			remove_child(dude_scene)
+			dude_scene = load("res://Dude.tscn").instance()
+			dude_scene.position.x = 350
+			dude_scene.position.y = 210
+			add_child(dude_scene)
 			number_of_misses += 1
+			print(number_of_misses)
 		
 		#print(currentdudepos)
 
