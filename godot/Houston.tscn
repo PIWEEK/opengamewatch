@@ -20,8 +20,7 @@ texture = ExtResource( 2 )
 position = Vector2( 30.9177, 16.4073 )
 texture = ExtResource( 3 )
 
-[node name="leverup2" type="Sprite" parent="."]
-visible = false
+[node name="leverdown" type="Sprite" parent="."]
 position = Vector2( 24.4177, 39.3716 )
 texture = ExtResource( 4 )
 
@@ -40,7 +39,7 @@ visible = false
 position = Vector2( 69.45, 21.25 )
 texture = ExtResource( 5 )
 
-[node name="hand_up" type="Sprite" parent="."]
+[node name="handup" type="Sprite" parent="."]
 visible = false
 position = Vector2( 8.74999, 11.25 )
 texture = ExtResource( 6 )
