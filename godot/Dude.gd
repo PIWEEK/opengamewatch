@@ -230,7 +230,7 @@ func next_move_exists(newpos):
 		return false
 
 
-var maxdeltaforgravity = 1.5
+var maxdeltaforgravity = 1.0
 var currentdeltaforgravity = 0
 
 func _process(delta):
