@@ -19,21 +19,26 @@ position = Vector2( 30.9177, 16.4073 )
 texture = ExtResource( 2 )
 
 [node name="leverup2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 24.4177, 39.3716 )
 texture = ExtResource( 3 )
 
 [node name="radio1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 69.45, 33.75 )
 texture = ExtResource( 4 )
 
 [node name="radio2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 69.45, 27.5 )
 texture = ExtResource( 4 )
 
 [node name="radio3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 69.45, 21.25 )
 texture = ExtResource( 4 )
 
 [node name="hand_up" type="Sprite" parent="."]
+visible = false
 position = Vector2( 8.74999, 11.25 )
 texture = ExtResource( 5 )

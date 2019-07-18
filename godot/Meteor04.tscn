@@ -6,29 +6,36 @@
 scale = Vector2( 0.75, 0.75 )
 
 [node name="m4_1" type="Sprite" parent="."]
+visible = false
 position = Vector2( 26.6667, 44 )
 texture = ExtResource( 1 )
 
 [node name="m4_2" type="Sprite" parent="."]
+visible = false
 position = Vector2( 161, 24 )
 texture = ExtResource( 1 )
 
 [node name="m4_3" type="Sprite" parent="."]
+visible = false
 position = Vector2( 288.667, 14.6667 )
 texture = ExtResource( 1 )
 
 [node name="m4_4" type="Sprite" parent="."]
+visible = false
 position = Vector2( 417, 19 )
 texture = ExtResource( 1 )
 
 [node name="m4_5" type="Sprite" parent="."]
+visible = false
 position = Vector2( 543, 28.3333 )
 texture = ExtResource( 1 )
 
 [node name="m4_6" type="Sprite" parent="."]
+visible = false
 position = Vector2( 666, 32 )
 texture = ExtResource( 1 )
 
 [node name="m4_7" type="Sprite" parent="."]
+visible = false
 position = Vector2( 765.667, 42.3334 )
 texture = ExtResource( 1 )

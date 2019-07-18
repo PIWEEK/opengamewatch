@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/meteromove.wav-b93dab1123c8939b2bcbd993289d611b.sample"
+
+[deps]
+
+source_file="res://res/snd/meteromove.wav"
+dest_files=[ "res://.import/meteromove.wav-b93dab1123c8939b2bcbd993289d611b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
