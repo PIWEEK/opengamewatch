@@ -14,6 +14,7 @@ var moonbase = 0
 
 
 var deaddude = false
+var dude_is_dead_by_fall = false
 
 func move(row,col,direction):
 	if direction == "jump":
@@ -78,14 +79,7 @@ func _ready():
 
 
 func dead_by_fall():
-	var dead = load("res://Dead.tscn").instance()
-	dead.position.x = 10
-	dead.position.y = 326
-	var deadsprite = dead.get_node("deaddude")
-	deadsprite.visible = true
-	add_child(dead)
-	get_node("dead").play()
-	deaddude = true
+	dude_is_dead_by_fall = true
 
 func dead_by_meteor():
 	get_node("dead").play()

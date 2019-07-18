@@ -6,12 +6,10 @@
 scale = Vector2( 0.8, 0.8 )
 
 [node name="flagL" type="Sprite" parent="."]
-visible = false
 position = Vector2( 17.7026, 33.7186 )
 texture = ExtResource( 1 )
 
 [node name="flagR" type="Sprite" parent="."]
-visible = false
 position = Vector2( 551.955, 41.1916 )
 texture = ExtResource( 1 )
 flip_h = true

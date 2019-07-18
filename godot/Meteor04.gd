@@ -4,15 +4,23 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var speed = 1
-var offset = 0.3
-var delay = 3
+var speed = 0.5
+var offset = 0.1
+var delay = 1
 
 var pos = [0,0]
 var coord_sprites
 var m_children
 var t
 var tend
+
+var m4_1
+var m4_2
+var m4_3
+var m4_4
+var m4_5
+var m4_6
+var m4_7
 
 var time
 var indexmeteor
@@ -21,18 +29,17 @@ var child
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
-	var m1_1 = get_node("m1_1")
-	var m1_2 = get_node("m1_2")
-	var m1_3 = get_node("m1_3")
-	var m1_4 = get_node("m1_4")
-	var m1_5 = get_node("m1_5")
-	var m1_6 = get_node("m1_6")
-	var m1_7 = get_node("m1_7")
+	m4_1 = get_node("m4_1")
+	m4_2 = get_node("m4_2")
+	m4_3 = get_node("m4_3")
+	m4_4 = get_node("m4_4")
+	m4_5 = get_node("m4_5")
+	m4_6 = get_node("m4_6")
+	m4_7 = get_node("m4_7")
 
-	coord_sprites = {[1,1]: m1_1, [1,2]: m1_2, [1,3]: m1_3, [1,4]: m1_4, [1,5]: m1_5, [1,6]: m1_6, [1,7]: m1_7}
+	coord_sprites = {[4,1]: m4_1, [4,2]: m4_2, [4,3]: m4_3, [4,4]: m4_4, [4,5]: m4_5, [4,6]: m4_6, [4,7]: m4_7}
 	
-	m_children = [[1,7],[1,6],[1,5],[1,4],[1,3],[1,2],[1,1]]
-	m_children.invert()
+	m_children = [[4,7],[4,6],[4,5],[4,4],[4,3],[4,2],[4,1]]
 
 	time = 0
 	indexmeteor = 0

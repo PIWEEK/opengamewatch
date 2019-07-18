@@ -3,6 +3,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
+var pos = 0
 
 func generate_base():
 	var bases = get_children()
