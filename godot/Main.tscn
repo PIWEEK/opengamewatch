@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://res/jpg/cementfactorylow.jpg" type="Texture" id=1]
-[ext_resource path="res://Base.tscn" type="PackedScene" id=2]
+[ext_resource path="res://res/jpg/electronika.jpg" type="Texture" id=2]
 [ext_resource path="res://Columbia.tscn" type="PackedScene" id=3]
 [ext_resource path="res://res/png/art.png" type="Texture" id=4]
 [ext_resource path="res://res/snd/astronautmove.wav" type="AudioStream" id=5]
@@ -34,15 +34,30 @@ var dude_scene
 var houston_scene
 var base_scene
 var flag_scene
+var columbia_scene
+
 var flag_coord
 var flag_is_taken
 
 var show_base = false
 var show_all_bases = false
 
+var scoretest = 0
+
 # Called when the node enters the scene tree for the first time.
 
 func blank():
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(2) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
+	t.start()
+	yield(t, \"timeout\")		# Finally, make the script stop with the yield
+	
+	scoretest+=1000
+	print(scoretest)	
+	get_tree().reload_current_scene()
+
+func clear():
 	var t = Timer.new() 		# Create a new Timer node
 	t.set_wait_time(1) 		# Set the wait time
 	add_child(t)			# Add it to the node tree as the direct child
@@ -55,56 +70,16 @@ func blank():
 	remove_child(m4_scene)
 	remove_child(m5_scene)
 	remove_child(dude_scene)
+	remove_child(base_scene)
+	remove_child(houston_scene)
+	remove_child(columbia_scene)
+	scoretest+=1000
+	print(scoretest)	
+	endgame = false
+	startgame()
+
+func startgame():
 	
-	get_tree().reload_current_scene()
-
-func clear():
-	var t = Timer.new() 		# Create a new Timer node
-	t.set_wait_time(3) 		# Set the wait time
-	add_child(t)			# Add it to the node tree as the direct child
-	t.start()
-	yield(t, \"timeout\")		# Finally, make the script stop with the yield
-	
-	#remove_child(m1_scene)
-	remove_child(m2_scene)
-	#remove_child(m3_scene)
-	remove_child(m4_scene)
-	remove_child(m5_scene)
-	remove_child(dude_scene)
-
-#	m1_scene = load(\"res://Meteor01.tscn\").instance()
-#	m1_scene.position.x = 330
-#	m1_scene.position.y = 236
-#	add_child(m1_scene)
-
-	m2_scene = load(\"res://Meteor02.tscn\").instance()
-	m2_scene.position.x = 336
-	m2_scene.position.y = 285
-	add_child(m2_scene)
-	
-#	m3_scene = load(\"res://Meteor03.tscn\").instance()
-#	m3_scene.position.x = 324
-#	m3_scene.position.y = 340
-#	add_child(m3_scene)
-
-	m4_scene = load(\"res://Meteor04.tscn\").instance()
-	m4_scene.position.x = 367
-	m4_scene.position.y = 401
-	add_child(m4_scene)
-
-	m5_scene = load(\"res://Meteor05.tscn\").instance()
-	m5_scene.position.x = 340
-	m5_scene.position.y = 435
-	add_child(m5_scene)
-	
-	dude_scene = load(\"res://Dude.tscn\").instance()
-	dude_scene.position.x = 350
-	dude_scene.position.y = 210
-	dude_scene.parent = self
-	add_child(dude_scene)
-
-func _ready():
-
 	#meteor1 = get_node(\"Meteor01\")
 	meteor2 = get_node(\"Meteor02\")
 	#meteor3 = get_node(\"Meteor03\")
@@ -136,9 +111,10 @@ func _ready():
 	m5_scene.position.y = 435
 	add_child(m5_scene)
 
-	
-	Columb = get_node(\"Columbia\")
-	columbanim(Columb, 1, 0, true)
+	columbia_scene = load(\"res://Columbia.tscn\").instance()
+	columbia_scene.position.x = 350
+	columbia_scene.position.y = 185
+	add_child(columbia_scene)	
 	#load_dude()
 	
 	dude_scene = load(\"res://Dude.tscn\").instance()
@@ -157,10 +133,14 @@ func _ready():
 	base_scene.position.y = 494
 	add_child(base_scene)
 
-	flag_scene = load(\"res://Flag.tscn\").instance()
-	flag_scene.position.x = 425
-	flag_scene.position.y = 460
-	add_child(flag_scene)
+#	flag_scene = load(\"res://Flag.tscn\").instance()
+#	flag_scene.position.x = 425
+#	flag_scene.position.y = 460
+#	add_child(flag_scene)
+
+
+func _ready():
+	startgame()
 
 
 func meteor_kills_dude(dudepos, listofmeteorpos):
@@ -350,6 +330,7 @@ func _process(delta):
 	else:
 		blank()
 
+
 func columbanim(columb_unidad, delay, offset, right):
 
 	var t = Timer.new() 		# Create a new Timer node
@@ -376,21 +357,24 @@ func columbanim(columb_unidad, delay, offset, right):
 [node name="Main" type="Node2D"]
 script = SubResource( 1 )
 
-[node name="background" type="TextureRect" parent="."]
+[node name="cement" type="TextureRect" parent="."]
 margin_left = 2.3241
 margin_right = 1282.32
 margin_bottom = 768.0
 texture = ExtResource( 1 )
 
-[node name="Base" parent="." instance=ExtResource( 2 )]
-visible = false
-position = Vector2( 470, 494 )
+[node name="electronika" type="TextureRect" parent="."]
+margin_left = 2.3241
+margin_right = 1282.32
+margin_bottom = 768.0
+texture = ExtResource( 2 )
 
 [node name="Columbia" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 350, 185 )
 
 [node name="Art" type="Sprite" parent="."]
-position = Vector2( 643.148, 371.122 )
+position = Vector2( 646.148, 374.122 )
 scale = Vector2( 0.785292, 0.785292 )
 z_index = 1
 texture = ExtResource( 4 )
