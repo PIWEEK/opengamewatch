@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Houston.gd" type="Script" id=1]
 [ext_resource path="res://res/sprite/antenna.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://res/sprite/leverdown.png" type="Texture" id=4]
 [ext_resource path="res://res/sprite/radio.png" type="Texture" id=5]
 [ext_resource path="res://res/sprite/hand_up.png" type="Texture" id=6]
+[ext_resource path="res://res/sprite/handdown.png" type="Texture" id=7]
 
 [node name="Houston" type="Node2D"]
 position = Vector2( 1, 1 )
@@ -24,7 +25,7 @@ texture = ExtResource( 3 )
 
 [node name="leverup2" type="Sprite" parent="."]
 visible = false
-position = Vector2( 24.4177, 39.3716 )
+position = Vector2( 30.6677, 39.3716 )
 texture = ExtResource( 4 )
 
 [node name="radio1" type="Sprite" parent="."]
@@ -46,3 +47,8 @@ texture = ExtResource( 5 )
 visible = false
 position = Vector2( 8.74999, 11.25 )
 texture = ExtResource( 6 )
+
+[node name="hand_down" type="Sprite" parent="."]
+visible = false
+position = Vector2( 13.75, 32.5 )
+texture = ExtResource( 7 )

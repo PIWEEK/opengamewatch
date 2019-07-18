@@ -133,6 +133,7 @@ func go_right(startpos, delta):
 		if dude_can_call_houston:
 			if (row == 3 and col == 6):
 				parent.show_base = true
+				
 				get_node("call").play()				
 				print("CALLING HOUSTON")
 			
