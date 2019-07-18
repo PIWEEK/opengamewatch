@@ -218,3 +218,5 @@ position = Vector2( 765, 532 )
 z_index = 1
 
 [node name="Time" parent="." instance=ExtResource( 15 )]
+position = Vector2( 548, 522 )
+z_index = 1
