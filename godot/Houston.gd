@@ -91,7 +91,7 @@ func _process(delta):
 		levermoving(2)
 	if Input.is_action_just_released("ui_page_up"):
 		levermoving(3)
-	if Input.is_action_just_released("ui_end"):
+	if Input.is_action_just_released("ui_m"):
 		levermoving(4)
 	
 #	if Input.is_action_just_released("ui_up"):
