@@ -4,19 +4,65 @@ extends Node2D
 # var a = 2
 # var b = "text"
 var pos = 0
+var wehavebase = false
+var coord_base = [5,1]
+var b1
+var b2
+var b3
+var b4
+var b5
+var flagL
+var flagR
 
+var bases_coord
+var flag_coord
+var c
+var b
+
+func generate_all_bases():
+	b1.visible = true
+	b2.visible = true
+	b3.visible = true
+	b4.visible = true
+	b5.visible = true
+	
+	return bases_coord.keys()
+
+func make_flag_appear():
+	
+	if c[1] < 4:
+		flagR.visible = true
+		flag_coord = [5,6]
+	if c[1] >= 4:
+		flagL.visible = true
+		flag_coord = [5,2]
+		
+	return flag_coord
+	
 func generate_base():
-	var bases = get_children()
-	bases.shuffle()
-	return bases[0]
-
-
+	if not wehavebase:
+		randomize()
+		var coords = bases_coord.keys()
+		coords.shuffle()
+		c = coords[0]
+		b = bases_coord[c]
+		b.visible = true
+		wehavebase = true
+		return c
+	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
-	var newbase = generate_base()
-	newbase.visible = true
+
+	b1 = get_node("base1")
+	b2 = get_node("base2")
+	b3 = get_node("base3")
+	b4 = get_node("base4")
+	b5 = get_node("base5")
+	flagL = get_node("flagL")
+	flagR = get_node("flagR")
+	
+	bases_coord = {[5,2]:b1,[5,3]:b2,[5,4]:b3,[5,5]:b4,[5,6]:b5}
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

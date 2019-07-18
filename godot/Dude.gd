@@ -6,6 +6,7 @@ extends Node2D
 
 var pos = [0,0]
 var coord_sprites
+var legal_coord_sprites
 var startpos = [1,1]
 
 var houston = false
@@ -15,6 +16,20 @@ var moonbase = 0
 
 var deaddude = false
 var dude_is_dead_by_fall = false
+var dude_is_dead_by_meteor = false
+
+var dude_can_call_houston = false
+var dude_can_walk_moon = false
+var small_step = false
+var moon_base_coord = [0,0]
+var moon_flag_destiny = [99,99]
+
+var parent
+
+func touchdown(coord):
+	moon_base_coord = coord
+	dude_can_walk_moon = true
+	
 
 func move(row,col,direction):
 	if direction == "jump":
@@ -66,6 +81,11 @@ func _ready():
 	[4,2]: d4_2, [4,3]: d4_3, [4,4]: d4_4, [4,5]: d4_5, [4,6]: d4_6,
 	[5,2]: d5_2, [5,3]: d5_3, [5,4]: d5_4, [5,5]: d5_5, [5,6]: d5_6,}
 	
+	legal_coord_sprites = [[1,1], [1,2], [1,3], [1,4], [1,5], [1,6],
+	[2,2], [2,3], [2,4], [2,5], [2,6], 
+	[3,2], [3,3], [3,4], [3,5], [3,6],
+	[4,2], [4,3], [4,4], [4,5], [4,6]]
+	
 	var t = Timer.new() 		# Create a new Timer node
 	t.set_wait_time(1) 		# Set the wait time
 	add_child(t)			# Add it to the node tree as the direct child
@@ -80,8 +100,10 @@ func _ready():
 
 func dead_by_fall():
 	dude_is_dead_by_fall = true
+	deaddude = true
 
 func dead_by_meteor():
+	dude_is_dead_by_meteor = true
 	get_node("dead").play()
 	deaddude = true
 
@@ -89,16 +111,31 @@ func dead_by_meteor():
 func resuscitate():
 	deaddude = false
 
+func checkforflag(pos):
+	print("CHECK FLAG")
+	print(parent.flag_coord)
+	print(pos)
+	if parent.flag_coord == pos:
+		parent.flag_is_taken = true
+
 func go_right(startpos, delta):
 	var startdude = coord_sprites[startpos]
 	var row = startpos[0]
 	var col = startpos[1]
 	get_node("move").play()
-	if next_move_is_valid([row, col+1]):
+	if next_move_exists([row, col+1]):
 		var newdude = coord_sprites[[row,col+1]]
 		currentdeltaforgravity = 0
-		return [row,col+1]
+		var newpos = [row,col+1]
+		checkforflag(newpos)
+		return newpos
 	else:
+		if dude_can_call_houston:
+			if (row == 3 and col == 6):
+				parent.show_base = true
+				get_node("call").play()				
+				print("CALLING HOUSTON")
+			
 		currentdeltaforgravity += delta
 		var newdude = coord_sprites[[row,col]]
 		return [row,col]
@@ -108,10 +145,12 @@ func go_left(startpos, delta):
 	var row = startpos[0]
 	var col = startpos[1]
 	get_node("move").play()
-	if next_move_is_valid([row, col-1]):
+	if next_move_exists([row, col-1]):
 		var newdude = coord_sprites[[row,col-1]]
 		currentdeltaforgravity = 0
-		return [row,col-1]
+		var newpos = [row,col-1]
+		checkforflag(newpos)
+		return newpos
 	else:
 		currentdeltaforgravity += delta
 
@@ -123,7 +162,7 @@ func jump(startpos):
 	var row = startpos[0]
 	var col = startpos[1]
 	get_node("move").play()
-	if next_move_is_valid([row-1, col]):
+	if next_move_exists([row-1, col]):
 		var newdude = coord_sprites[[row-1,col]]
 		currentdeltaforgravity = 0
 		return [row-1,col]
@@ -137,14 +176,16 @@ func go_down(startpos):
 	var row = startpos[0]
 	var col = startpos[1]
 	get_node("move").play()
-	if next_move_is_valid([row+1, col]):
+	if next_move_exists([row+1, col]):
 		var newdude = coord_sprites[[row+1,col]]
 		currentdeltaforgravity = 0
-		return [row+1,col]
-	else:
-		dead_by_fall()
-		var newdude = coord_sprites[[row,col]]
-		return [row,col]
+		var newpos = [row+1,col]
+		checkforflag(newpos)
+		if not next_move_is_valid([row+1, col]):
+			dead_by_fall()
+	
+
+	return [row+1,col]
 
 func draw_dude(pos):
 	var dude_to_draw = coord_sprites[pos]
@@ -155,10 +196,18 @@ func hide_dude(pos):
 	dude_to_hide.visible = false
 	
 func next_move_is_valid(newpos):
-	if newpos in coord_sprites.keys():
+	if newpos in legal_coord_sprites:
 		return true
 	else:
 		return false
+
+	
+func next_move_exists(newpos):
+	if newpos in coord_sprites:
+		return true
+	else:
+		return false
+
 
 var maxdeltaforgravity = 1.5
 var currentdeltaforgravity = 0
@@ -182,16 +231,18 @@ func _process(delta):
 			startpos = jump(startpos)
 			draw_dude(startpos)
 			currentdeltaforgravity = 0
-		elif Input.is_action_just_released("ui_down"):
-			hide_dude(startpos)
-			startpos = go_down(startpos)
-			draw_dude(startpos)
-			currentdeltaforgravity = 0
+#		elif Input.is_action_just_released("ui_down"):
+#			hide_dude(startpos)
+#			startpos = go_down(startpos)
+#			draw_dude(startpos)
+#			currentdeltaforgravity = 0
 		if currentdeltaforgravity >= maxdeltaforgravity:
-			hide_dude(startpos)
-			startpos = go_down(startpos)
-			draw_dude(startpos)
-			currentdeltaforgravity = 0
+			if startpos[0] < 5:
+#			if (not dude_can_walk_moon) and (startpos[0] < 6):
+				hide_dude(startpos)
+				startpos = go_down(startpos)
+				draw_dude(startpos)
+				currentdeltaforgravity = 0
 	else:
 		pass
 

@@ -4,9 +4,9 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
-var speed = 0.5
-var offset = 0.1
-var delay = 2
+var speed = 0.9
+var offset = 0.9
+var delay = 0.9
 
 var pos = [0,0]
 var coord_sprites
@@ -26,6 +26,11 @@ var time
 var indexmeteor
 var child
 
+
+func play():
+	get_node("mmove").play()
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 
@@ -42,24 +47,32 @@ func _ready():
 
 	time = 0
 	indexmeteor = 0
-	pos = [0,0]
-	
+	pos = [3,1]
+	child = coord_sprites[pos]
+	child.visible = true
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time += delta
 	if time > delay:
 		
 		if time > speed:
-			pos = m_children[indexmeteor]
-			child = coord_sprites[pos]
-			child.visible = false
-			indexmeteor += 1
-			if indexmeteor > 5:
-				indexmeteor = 0
+			if indexmeteor != 0:
+				pos = m_children[indexmeteor-1]
+				child = coord_sprites[pos]
+				child.visible = false
+			
+				if indexmeteor > 5:
+					indexmeteor = 0
+				
+				pos = m_children[indexmeteor]
+				child = coord_sprites[pos]
+				child.visible = true
+				play()
+				indexmeteor += 1
+			elif indexmeteor == 0:
+				pos = m_children[indexmeteor]
+				child = coord_sprites[pos]
+				child.visible = true
+				indexmeteor += 1
 			time = 0
-			pos = m_children[indexmeteor]
-			child = coord_sprites[pos]
-			child.visible = true
-					

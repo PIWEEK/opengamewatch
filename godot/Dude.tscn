@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://Dude.gd" type="Script" id=1]
 [ext_resource path="res://res/sprite/dude_1_1.png" type="Texture" id=2]
@@ -30,6 +30,7 @@
 [ext_resource path="res://res/sprite/dude_5_6.png" type="Texture" id=28]
 [ext_resource path="res://res/snd/astronautmove.wav" type="AudioStream" id=29]
 [ext_resource path="res://res/snd/death.wav" type="AudioStream" id=30]
+[ext_resource path="res://res/snd/houston.wav" type="AudioStream" id=31]
 
 [node name="Dude" type="Node2D"]
 scale = Vector2( 0.8, 0.8 )
@@ -175,3 +176,6 @@ stream = ExtResource( 29 )
 
 [node name="dead" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 30 )
+
+[node name="call" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 31 )
