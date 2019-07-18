@@ -213,3 +213,5 @@ z_index = 1
 texture = ExtResource( 13 )
 
 [node name="Miss" parent="." instance=ExtResource( 14 )]
+position = Vector2( 765, 532 )
+z_index = 1
