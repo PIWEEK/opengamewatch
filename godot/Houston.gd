@@ -8,6 +8,7 @@ var box
 var lever_up
 var lever_down
 var hand_up
+var hand_down
 var line1
 var line2
 var line3
@@ -19,6 +20,7 @@ func _ready():
 	lever_up = get_node("leverup")
 	lever_down = get_node("leverdown")
 	hand_up = get_node("handup")
+	hand_down = get_node("handdown")
 	line1 = get_node("radio1")
 	line2 = get_node("radio2")
 	line3 = get_node("radio3")
@@ -26,6 +28,7 @@ func _ready():
 	lever_up.visible = true
 	lever_down.visible = false
 	hand_up.visible = false
+	hand_down.visible = false
 
 
 func pintalineas(num_lines):
@@ -53,18 +56,22 @@ func levermoving(pos):
 		hand_up.visible = false
 		lever_up.visible = true
 		lever_down.visible = false
+		hand_down.visible = false
 	elif pos == 2:
 		hand_up.visible = true
 		lever_up.visible = true
 		lever_down.visible = false
+		hand_down.visible = false
 	elif pos == 3:
 		hand_up.visible = false
 		lever_up.visible = false
 		lever_down.visible = true
+		hand_down.visible = true
 	elif pos == 4:
 		hand_up.visible = false
 		lever_up.visible = false
 		lever_down.visible = true
+		hand_down.visible = false
 	
 func _process(delta):
 	
@@ -79,11 +86,13 @@ func _process(delta):
 		
 	
 	if Input.is_action_just_released("ui_select"):
-		levermoving(4)
+		levermoving(1)
 	if Input.is_action_just_released("ui_page_down"):
 		levermoving(2)
 	if Input.is_action_just_released("ui_page_up"):
 		levermoving(3)
+	if Input.is_action_just_released("ui_end"):
+		levermoving(4)
 	
 #	if Input.is_action_just_released("ui_up"):
 #		if counter == 0:

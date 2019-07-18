@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Houston.gd" type="Script" id=1]
 [ext_resource path="res://res/sprite/antenna.png" type="Texture" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://res/sprite/leverdown.png" type="Texture" id=4]
 [ext_resource path="res://res/sprite/radio.png" type="Texture" id=5]
 [ext_resource path="res://res/sprite/hand_up.png" type="Texture" id=6]
+[ext_resource path="res://res/sprite/handdown.png" type="Texture" id=7]
 
 [node name="Houston" type="Node2D"]
 position = Vector2( 1, 1 )
@@ -13,33 +14,33 @@ scale = Vector2( 0.8, 0.8 )
 script = ExtResource( 1 )
 
 [node name="antenna" type="Sprite" parent="."]
-position = Vector2( 69.4487, 27.8517 )
+position = Vector2( 69.4487, 32.8517 )
 texture = ExtResource( 2 )
 
 [node name="leverup" type="Sprite" parent="."]
-position = Vector2( 30.9177, 16.4073 )
+position = Vector2( 32.1677, 18.9073 )
 texture = ExtResource( 3 )
 
 [node name="leverdown" type="Sprite" parent="."]
-position = Vector2( 24.4177, 39.3716 )
+position = Vector2( 34.4177, 44.3716 )
 texture = ExtResource( 4 )
 
 [node name="radio1" type="Sprite" parent="."]
-visible = false
-position = Vector2( 69.45, 33.75 )
+position = Vector2( 69.45, 38.75 )
 texture = ExtResource( 5 )
 
 [node name="radio2" type="Sprite" parent="."]
-visible = false
-position = Vector2( 69.45, 27.5 )
+position = Vector2( 69.45, 32.5 )
 texture = ExtResource( 5 )
 
 [node name="radio3" type="Sprite" parent="."]
-visible = false
-position = Vector2( 69.45, 21.25 )
+position = Vector2( 69.45, 26.25 )
 texture = ExtResource( 5 )
 
 [node name="handup" type="Sprite" parent="."]
-visible = false
-position = Vector2( 8.74999, 11.25 )
+position = Vector2( 9.99999, 13.75 )
 texture = ExtResource( 6 )
+
+[node name="handdown" type="Sprite" parent="."]
+position = Vector2( 16.25, 38.75 )
+texture = ExtResource( 7 )
