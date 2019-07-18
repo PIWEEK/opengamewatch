@@ -52,27 +52,35 @@ func _ready():
 	child.visible = true
 
 
+var pause = false
+func pause(delta):
+	pause = true
+	
+func resume(delta):
+	pause = false
+
 func _process(delta):
-	time += delta
-	if time > delay:
-		
-		if time > speed:
-			if indexmeteor != 0:
-				pos = m_children[indexmeteor-1]
-				child = coord_sprites[pos]
-				child.visible = false
+	if not pause:
+		time += delta
+		if time > delay:
 			
-				if indexmeteor > 6:
-					indexmeteor = 0
+			if time > speed:
+				if indexmeteor != 0:
+					pos = m_children[indexmeteor-1]
+					child = coord_sprites[pos]
+					child.visible = false
 				
-				pos = m_children[indexmeteor]
-				child = coord_sprites[pos]
-				child.visible = true
-				play()
-				indexmeteor += 1
-			elif indexmeteor == 0:
-				pos = m_children[indexmeteor]
-				child = coord_sprites[pos]
-				child.visible = true
-				indexmeteor += 1
-			time = 0
+					if indexmeteor > 6:
+						indexmeteor = 0
+					
+					pos = m_children[indexmeteor]
+					child = coord_sprites[pos]
+					child.visible = true
+					play()
+					indexmeteor += 1
+				elif indexmeteor == 0:
+					pos = m_children[indexmeteor]
+					child = coord_sprites[pos]
+					child.visible = true
+					indexmeteor += 1
+				time = 0

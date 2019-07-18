@@ -30,6 +30,26 @@ func touchdown(coord):
 	moon_base_coord = coord
 	dude_can_walk_moon = true
 	
+var pause = false
+func pause(delta):
+	pause = true
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(0.25) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
+	
+	
+	for i in range(5):
+		draw_dude(startpos)
+	
+		t.start()			# Start it
+		yield(t, "timeout")		# Finally, make the script stop with the yield
+		hide_dude(startpos)
+		t.start()			# Start it
+		yield(t, "timeout")		# Finally, make the script stop with the yield
+	draw_dude(startpos)
+	
+	
+		
 
 func move(row,col,direction):
 	if direction == "jump":
@@ -214,38 +234,39 @@ var maxdeltaforgravity = 1.5
 var currentdeltaforgravity = 0
 
 func _process(delta):
-	if not deaddude:
-		currentdeltaforgravity += delta
-		
-		if Input.is_action_just_released("ui_right"):
-			hide_dude(startpos)
-			startpos = go_right(startpos, delta)
-			draw_dude(startpos)
+	if not pause:
+		if not deaddude:
+			currentdeltaforgravity += delta
 			
-		elif Input.is_action_just_released("ui_left"):
-			hide_dude(startpos)
-			startpos = go_left(startpos, delta)
-			draw_dude(startpos)	
-
-		elif Input.is_action_just_released("ui_accept"):
-			hide_dude(startpos)
-			startpos = jump(startpos)
-			draw_dude(startpos)
-			currentdeltaforgravity = 0
-#		elif Input.is_action_just_released("ui_down"):
-#			hide_dude(startpos)
-#			startpos = go_down(startpos)
-#			draw_dude(startpos)
-#			currentdeltaforgravity = 0
-		if currentdeltaforgravity >= maxdeltaforgravity:
-			if startpos[0] < 5:
-#			if (not dude_can_walk_moon) and (startpos[0] < 6):
+			if Input.is_action_just_released("ui_right"):
 				hide_dude(startpos)
-				startpos = go_down(startpos)
+				startpos = go_right(startpos, delta)
+				draw_dude(startpos)
+				
+			elif Input.is_action_just_released("ui_left"):
+				hide_dude(startpos)
+				startpos = go_left(startpos, delta)
+				draw_dude(startpos)	
+	
+			elif Input.is_action_just_released("ui_accept"):
+				hide_dude(startpos)
+				startpos = jump(startpos)
 				draw_dude(startpos)
 				currentdeltaforgravity = 0
-	else:
-		pass
+	#		elif Input.is_action_just_released("ui_down"):
+	#			hide_dude(startpos)
+	#			startpos = go_down(startpos)
+	#			draw_dude(startpos)
+	#			currentdeltaforgravity = 0
+			if currentdeltaforgravity >= maxdeltaforgravity:
+				if startpos[0] < 5:
+	#			if (not dude_can_walk_moon) and (startpos[0] < 6):
+					hide_dude(startpos)
+					startpos = go_down(startpos)
+					draw_dude(startpos)
+					currentdeltaforgravity = 0
+		else:
+			pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

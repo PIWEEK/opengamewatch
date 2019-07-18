@@ -190,19 +190,22 @@ func show_dead_by_meteor(delta):
 
 func show_dead_by_fall(delta):
 	
+	m2_scene.pause(delta)
+	m4_scene.pause(delta)
+	m5_scene.pause(delta)
 	var dead = load(\"res://Dead.tscn\").instance()
 	dead.position.x = 350
 	dead.position.y = 465
-	var deadsprite = dead.get_node(\"deaddude\")
-	deadsprite.visible = true
 	add_child(dead)
 	get_node(\"dead\").play()
-	var t = Timer.new() 		# Create a new Timer node
+	t = Timer.new() 		# Create a new Timer node
 	t.set_wait_time(3) 		# Set the wait time
 	add_child(t)			# Add it to the node tree as the direct child
 	t.start()
 	yield(t, \"timeout\")		# Finally, make the script stop with the yield
 	remove_child(dead)
+	
+
 		
 
 func is_dead_by_meteor(delta):
@@ -218,6 +221,10 @@ func is_dead_by_meteor(delta):
 
 #	var listofmeteorpos = [meteor1pos, meteor2pos, meteor3pos, meteor4pos, meteor5pos]
 	if meteor_kills_dude(currentdudepos, listofmeteorpos):
+		dude_scene.pause(delta)
+		m2_scene.pause(delta)
+		m4_scene.pause(delta)
+		m5_scene.pause(delta)
 		return true
 	return false
 
