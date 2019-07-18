@@ -99,7 +99,7 @@ func _process(delta):
 
 		var listofmeteorpos = [meteor1pos, meteor2pos]
 		if meteor_kills_dude(currentdudepos, listofmeteorpos):
-			get_node(\"Dude\").dead()
+			get_node(\"Dude\").dead_by_meteor()
 			
 			var t = Timer.new() 		# Create a new Timer node
 			t.set_wait_time(3) 		# Set the wait time

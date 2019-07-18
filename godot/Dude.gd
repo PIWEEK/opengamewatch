@@ -77,7 +77,7 @@ func _ready():
 	draw_dude(startpos)
 
 
-func dead():
+func dead_by_fall():
 	var dead = load("res://Dead.tscn").instance()
 	dead.position.x = 10
 	dead.position.y = 326
@@ -86,6 +86,11 @@ func dead():
 	add_child(dead)
 	get_node("dead").play()
 	deaddude = true
+
+func dead_by_meteor():
+	get_node("dead").play()
+	deaddude = true
+
 
 func resuscitate():
 	deaddude = false
@@ -143,7 +148,7 @@ func go_down(startpos):
 		currentdeltaforgravity = 0
 		return [row+1,col]
 	else:
-		dead()
+		dead_by_fall()
 		var newdude = coord_sprites[[row,col]]
 		return [row,col]
 

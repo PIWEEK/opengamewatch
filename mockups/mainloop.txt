@@ -1,0 +1,41 @@
+if not endgame
+   if not dead
+      
+      is_dead_by_fall()
+        animate_dead_by_fall()
+        dead+=1
+        clear()
+
+      is_dead_by_meteor()
+        animate_dead_by_meteor()
+        dead+=1
+        clear()
+      
+      is_time_for_houston()
+        animate_houston()
+        allow_extra_action_houston()
+        
+
+      is_time_for_base()
+        animate_base()
+        allow_extra_action_base()
+        add_score()
+
+      is_time_for_flag()
+        animate_all_bases()
+        allow_extra_action_bases()
+        allow_extra_action_flag()
+        add_score()
+
+      is_flag_taken()
+        play_flag_taken()
+        add_score()
+        clear()
+
+   if dead > 2:
+      endgame = true
+
+animate_endgame()
+play_endgame()
+      
+       
