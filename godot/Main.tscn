@@ -201,7 +201,8 @@ position = Vector2( 425, 460 )
 position = Vector2( 872, 345 )
 
 [node name="Base" parent="." instance=ExtResource( 10 )]
-position = Vector2( 470, 494 )
+position = Vector2( 470, 495 )
+z_index = 2
 script = ExtResource( 11 )
 
 [node name="Columbia" parent="." instance=ExtResource( 12 )]
