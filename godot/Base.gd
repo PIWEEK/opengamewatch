@@ -28,14 +28,37 @@ func generate_all_bases():
 	
 	return bases_coord.keys()
 
-func make_flag_appear():
+
+
+func blinkflag(flag):
+
+	var t = Timer.new() 		# Create a new Timer node
+	t.set_wait_time(0.25) 		# Set the wait time
+	add_child(t)			# Add it to the node tree as the direct child
 	
+	while blink:
+		flag.visible = true
+		t.start()			# Start it
+		yield(t, "timeout")		# Finally, make the script stop with the yield
+		flag.visible = false
+		t.start()			# Start it
+		yield(t, "timeout")		# Finally, make the script stop with the yield
+	flag.visible = true
+
+	
+var blink = false
+
+func make_flag_appear():
+
+	blink = true
 	if c[1] < 4:
 		flagR.visible = true
 		flag_coord = [5,6]
+		blinkflag(flagR)
 	if c[1] >= 4:
 		flagL.visible = true
 		flag_coord = [5,2]
+		blinkflag(flagL)
 		
 	return flag_coord
 	

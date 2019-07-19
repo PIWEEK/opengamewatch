@@ -95,13 +95,13 @@ func _ready():
 
 
 	d1_1.visible = true
-	coord_sprites = {[1,1]: d1_1, [1,2]: d1_2, [1,3]: d1_3, [1,4]: d1_4, [1,5]: d1_5, [1,6]: d1_6, [1,7]: d1_7,
+	coord_sprites = {[1,1]: d1_1, [1,2]: d1_2, [1,3]: d1_3, [1,4]: d1_4, [1,5]: d1_5, [1,6]: d1_6,# [1,7]: d1_7,
 	[2,2]: d2_2, [2,3]: d2_3, [2,4]: d2_4, [2,5]: d2_5, [2,6]: d2_6, 
 	[3,2]: d3_2, [3,3]: d3_3, [3,4]: d3_4, [3,5]: d3_5, [3,6]: d3_6,
 	[4,2]: d4_2, [4,3]: d4_3, [4,4]: d4_4, [4,5]: d4_5, [4,6]: d4_6,
 	[5,2]: d5_2, [5,3]: d5_3, [5,4]: d5_4, [5,5]: d5_5, [5,6]: d5_6,}
 	
-	legal_coord_sprites = [[1,1], [1,2], [1,3], [1,4], [1,5], [1,6],
+	legal_coord_sprites = [[1,2], [1,3], [1,4], [1,5], [1,6],
 	[2,2], [2,3], [2,4], [2,5], [2,6], 
 	[3,2], [3,3], [3,4], [3,5], [3,6],
 	[4,2], [4,3], [4,4], [4,5], [4,6]]
@@ -132,9 +132,6 @@ func resuscitate():
 	deaddude = false
 
 func checkforflag(pos):
-	print("CHECK FLAG")
-	print(parent.flag_coord)
-	print(pos)
 	if parent.flag_coord == pos:
 		parent.flag_is_taken = true
 
@@ -155,7 +152,6 @@ func go_right(startpos, delta):
 				parent.show_base = true
 				
 				get_node("call").play()				
-				print("CALLING HOUSTON")
 			
 		currentdeltaforgravity += delta
 		var newdude = coord_sprites[[row,col]]
@@ -166,7 +162,7 @@ func go_left(startpos, delta):
 	var row = startpos[0]
 	var col = startpos[1]
 	get_node("move").play()
-	if next_move_exists([row, col-1]):
+	if next_move_exists([row, col-1]) and next_move_is_valid(([row, col-1])):
 		var newdude = coord_sprites[[row,col-1]]
 		currentdeltaforgravity = 0
 		var newpos = [row,col-1]

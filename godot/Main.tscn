@@ -146,7 +146,6 @@ func _ready():
 func meteor_kills_dude(dudepos, listofmeteorpos):
 	for mpos in listofmeteorpos:
 		if dudepos == mpos:
-			print(mpos)
 			return true
 	return false
 
@@ -309,7 +308,6 @@ func _process(delta):
 			allow_extra_action_houston(delta)
 
 		if is_time_to_show_base(delta):
-			print(\"IS TIME!\")
 			var c = base_scene.generate_base()
 			show_base = false
 			if not dude_scene.legal_coord_sprites.find(c) > -1:
@@ -330,6 +328,7 @@ func _process(delta):
 #
 		if is_flag_taken(delta):
 			get_node(\"win\").play()
+			base_scene.set(\"blink\",false)
 			var t = Timer.new() 		# Create a new Timer node
 			t.set_wait_time(1) 		# Set the wait time
 			add_child(t)			# Add it to the node tree as the direct child
