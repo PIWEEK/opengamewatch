@@ -1,0 +1,137 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Time.gd" type="Script" id=1]
+[ext_resource path="res://res/sprite/segment2.png" type="Texture" id=2]
+[ext_resource path="res://res/sprite/segment3.png" type="Texture" id=3]
+[ext_resource path="res://res/sprite/segment1.png" type="Texture" id=4]
+[ext_resource path="res://res/sprite/segment4.png" type="Texture" id=5]
+[ext_resource path="res://res/sprite/segment5.png" type="Texture" id=6]
+[ext_resource path="res://res/sprite/segment6.png" type="Texture" id=7]
+[ext_resource path="res://res/sprite/segment7.png" type="Texture" id=8]
+[ext_resource path="res://res/sprite/colon.png" type="Texture" id=9]
+[ext_resource path="res://res/sprite/am.png" type="Texture" id=10]
+[ext_resource path="res://res/sprite/pm.png" type="Texture" id=11]
+[ext_resource path="res://res/sprite/alarm.png" type="Texture" id=12]
+
+[node name="Time" type="Node2D"]
+scale = Vector2( 0.8, 0.8 )
+script = ExtResource( 1 )
+
+[node name="segment1_2" type="Sprite" parent="."]
+position = Vector2( 49.0988, 13.9259 )
+texture = ExtResource( 2 )
+
+[node name="segment1_3" type="Sprite" parent="."]
+position = Vector2( 47.2963, 35.7284 )
+rotation = -0.0252076
+texture = ExtResource( 3 )
+
+[node name="segment2_1" type="Sprite" parent="."]
+position = Vector2( 71.1759, 4.8889 )
+texture = ExtResource( 4 )
+
+[node name="segment2_2" type="Sprite" parent="."]
+position = Vector2( 78.7932, 14.2963 )
+texture = ExtResource( 2 )
+
+[node name="segment2_3" type="Sprite" parent="."]
+position = Vector2( 76.9908, 36.0988 )
+texture = ExtResource( 3 )
+
+[node name="segment2_4" type="Sprite" parent="."]
+position = Vector2( 64.5833, 43.9259 )
+texture = ExtResource( 5 )
+
+[node name="segment2_5" type="Sprite" parent="."]
+position = Vector2( 59.1636, 33.1111 )
+texture = ExtResource( 6 )
+
+[node name="segment2_6" type="Sprite" parent="."]
+position = Vector2( 61.7562, 14.0988 )
+texture = ExtResource( 7 )
+
+[node name="segment2_7" type="Sprite" parent="."]
+position = Vector2( 69.571, 24.3087 )
+texture = ExtResource( 8 )
+
+[node name="segment3_1" type="Sprite" parent="."]
+position = Vector2( 113.602, 4.8889 )
+texture = ExtResource( 4 )
+
+[node name="segment3_2" type="Sprite" parent="."]
+position = Vector2( 121.219, 14.2963 )
+texture = ExtResource( 2 )
+
+[node name="segment3_3" type="Sprite" parent="."]
+position = Vector2( 119.417, 36.0988 )
+texture = ExtResource( 3 )
+
+[node name="segment3_4" type="Sprite" parent="."]
+position = Vector2( 107.009, 43.9259 )
+texture = ExtResource( 5 )
+
+[node name="segment3_5" type="Sprite" parent="."]
+position = Vector2( 101.59, 33.1111 )
+texture = ExtResource( 6 )
+
+[node name="segment3_6" type="Sprite" parent="."]
+position = Vector2( 104.182, 14.0988 )
+texture = ExtResource( 7 )
+
+[node name="segment3_7" type="Sprite" parent="."]
+position = Vector2( 111.997, 24.3087 )
+texture = ExtResource( 8 )
+
+[node name="segment4_1" type="Sprite" parent="."]
+position = Vector2( 143.296, 4.8889 )
+texture = ExtResource( 4 )
+
+[node name="segment4_2" type="Sprite" parent="."]
+position = Vector2( 150.914, 14.2963 )
+texture = ExtResource( 2 )
+
+[node name="segment4_3" type="Sprite" parent="."]
+position = Vector2( 149.111, 36.0988 )
+texture = ExtResource( 3 )
+
+[node name="segment4_4" type="Sprite" parent="."]
+position = Vector2( 136.704, 43.9259 )
+texture = ExtResource( 5 )
+
+[node name="segment4_5" type="Sprite" parent="."]
+position = Vector2( 131.284, 33.1111 )
+texture = ExtResource( 6 )
+
+[node name="segment4_6" type="Sprite" parent="."]
+position = Vector2( 133.877, 14.0988 )
+texture = ExtResource( 7 )
+
+[node name="segment4_7" type="Sprite" parent="."]
+position = Vector2( 141.691, 24.3087 )
+texture = ExtResource( 8 )
+
+[node name="colon" type="Sprite" parent="."]
+position = Vector2( 90.3518, 24.7407 )
+texture = ExtResource( 9 )
+
+[node name="AM" type="Sprite" parent="."]
+visible = false
+position = Vector2( 17.6296, 14.2315 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 10 )
+
+[node name="PM" type="Sprite" parent="."]
+position = Vector2( 16.1574, 36.2963 )
+scale = Vector2( 0.9, 0.9 )
+texture = ExtResource( 11 )
+
+[node name="alarm1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 173.148, 27.9167 )
+texture = ExtResource( 12 )
+
+[node name="alarm2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 191.898, 27.9167 )
+texture = ExtResource( 12 )
+flip_h = true

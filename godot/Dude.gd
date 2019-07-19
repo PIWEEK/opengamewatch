@@ -151,7 +151,9 @@ func go_right(startpos, delta):
 			if (row == 3 and col == 6):
 				parent.show_base = true
 				
-				get_node("call").play()				
+				get_node("call").play()		
+				
+				dude_can_call_houston = false		
 			
 		currentdeltaforgravity += delta
 		var newdude = coord_sprites[[row,col]]

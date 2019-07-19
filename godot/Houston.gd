@@ -16,7 +16,7 @@ func visible(delta):
 func action(delta):
 	get_node("hand_up").visible=true
 	var t = Timer.new() 		# Create a new Timer node
-	t.set_wait_time(0.3) 		# Set the wait time
+	t.set_wait_time(0.1) 		# Set the wait time
 	add_child(t)			# Add it to the node tree as the direct child
 	t.start()
 	yield(t, "timeout")		# Finally, make the script stop with the yield
