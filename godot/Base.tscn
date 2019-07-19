@@ -10,26 +10,21 @@
 scale = Vector2( 0.9, 0.9 )
 
 [node name="base1" type="Sprite" parent="."]
-visible = false
 position = Vector2( 18, 4 )
 texture = ExtResource( 1 )
 
 [node name="base2" type="Sprite" parent="."]
-visible = false
 position = Vector2( 120.889, 1.5 )
 texture = ExtResource( 2 )
 
 [node name="base3" type="Sprite" parent="."]
-visible = false
 position = Vector2( 209.167, -0.861111 )
 texture = ExtResource( 3 )
 
 [node name="base4" type="Sprite" parent="."]
-visible = false
 position = Vector2( 299.378, 4.59965 )
 texture = ExtResource( 4 )
 
 [node name="base5" type="Sprite" parent="."]
-visible = false
 position = Vector2( 393.5, 11.603 )
 texture = ExtResource( 5 )
